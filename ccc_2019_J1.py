@@ -1,23 +1,23 @@
 num = []
 
-for i in range(6):
+for i in range(3):
     num.append(int(input()))
-    
 
-num[0] *= 3
-num[1] *= 2
-num[2] *= 1
+li = "9780921418"
+li = list(li)
 
-a = num[0] + num[1] + num[2]
+mer = li + num
 
-num[3] *= 3
-num[4] *= 2
-num[5] *= 1
-b = num[3] + num[4] + num[5]
+mul = []
 
-if a > b:
-    print("A")
-elif a < b:
-    print("B")
-elif a == b:
-    print("T")
+nol = 1
+
+for i in range(len(mer)):
+    if nol == 1:
+        mul.append(int(mer[i]) * nol)
+        nol = 3
+    elif nol == 3:
+        mul.append(int(mer[i]) * nol)
+        nol = 1
+
+print("The 1-3-sum is", sum(mul))
