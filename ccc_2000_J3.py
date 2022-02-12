@@ -1,44 +1,21 @@
-x = int(input())
-a = int(input())
-b = int(input())
-c = int(input())
+nm = int(input())
+high1 = 0
+low1 = 0
 
-qui = True
-count = 0
+high2 = 100
+low2 = 100
 
-while x > 0 and qui:
-    if x <= 0:
-        qui = False
-    x -= 1
-    count += 1
-    a += 1
-    if x <= 0:
-        qui = False
-    if a == 35:
-        a = 0
-        x += 30
-    
-    if x <= 0:
-        qui = False
-    x -= 1
-    count += 1
-    b += 1
-    if b == 100:
-        b = 0
-        x += 60
-    
-    if x <= 0:
-        qui = False
-    x -= 1
-    count += 1
-    c += 1
-    if c == 10:
-        c = 0
-        x += 9
-    
-    if x <= 0:
-        qui = False
+for i in range(nm):
+    k = input("").split(",")
+    k = [int(item) for item in k]
+    if k[0] > high1:
+        high1 = k[0]
+    if k[1] > low1:
+        low1 = k[1]
+    if k[0] < high2:
+        high2 = k[0]
+    if k[1] < low2:
+        low2 = k[1]
 
-print("Martha plays {} times before going broke.".format(count))
-        
-    
+print(str(high2-1) + "," + str(low2-1))
+print(str(high1+1) + "," + str(low1+1))
